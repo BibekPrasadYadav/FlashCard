@@ -9,6 +9,13 @@ const port = 5000;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; font-src 'self' https://flashcard-6yof.onrender.com; script-src 'self'; style-src 'self'; img-src 'self';"
+  );
+  next();
+});
 
 // MySQL Connection
 const db = mysql.createConnection({
