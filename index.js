@@ -18,11 +18,20 @@ app.use((req, res, next) => {
 });
 
 // MySQL Connection
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "root",
+//   password: "12345",
+//   database: "flashboard_db",
+//   port: 3306,
+// });
+
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "12345",
-  database: "flashboard_db",
+  host: "database-2.chsgsmcckei8.eu-north-1.rds.amazonaws.com",
+  user: "admin",
+  password: "Bikash123",
+  database: "flashcard_db",
+  port: 3306,
 });
 
 db.connect((err) => {
